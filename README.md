@@ -9,5 +9,5 @@ Add your name in the table below when you add your test commit:
 | cosmonewt   |              |
 | liquidsonic |              |
 | JesNetWD    |              |
-| bobby2910   |              |
+| bobby2910   | vB           |
 | Simon Aust  | Simon        |
