@@ -11,3 +11,4 @@ Add your name in the table below when you add your test commit:
 | JesNetWD    | Jes          |
 | bobby2910   | vB           |
 | Simon Aust  | Simon        |
+| Amine       | Amine        |
