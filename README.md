@@ -6,7 +6,7 @@ Add your name in the table below when you add your test commit:
 | ----------- | ------------ |
 | Amedeo      | n4pZ         |
 | kwui3       |              |
-| cosmonewt   |              |
+| cosmonewt   | Theo         |
 | liquidsonic |              |
 | JesNetWD    | Jes          |
 | bobby2910   | vB           |
