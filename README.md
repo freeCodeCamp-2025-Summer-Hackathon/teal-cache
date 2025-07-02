@@ -5,7 +5,7 @@ Add your name in the table below when you add your test commit:
 | Git name    | Discord Name |
 | ----------- | ------------ |
 | Amedeo      | n4pZ         |
-| kwui3       |              |
+| kwui3       | Kay          |
 | cosmonewt   | Theo         |
 | liquidsonic |              |
 | JesNetWD    | Jes          |
