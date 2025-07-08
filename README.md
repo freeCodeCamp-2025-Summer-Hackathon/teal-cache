@@ -64,13 +64,15 @@ git clone https://github.com/freeCodeCamp-2025-Summer-Hackathon/teal-cache.git
 
 ## Project Structure
 
+```
 src/
-├── components/ # Reusable UI components
-├── pages/ # Page components
-├── hooks/ # Custom React hooks
-├── utils/ # Utility functions
-├── lib/ # Supabase client configuration
-└── styles/ # Global styles
+├── components/    # Reusable UI components
+├── pages/        # Page components
+├── hooks/        # Custom React hooks
+├── utils/        # Utility functions
+├── lib/          # Supabase client configuration
+└── styles/       # Global styles
+```
 
 ## Authentication
 
