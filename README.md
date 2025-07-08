@@ -91,3 +91,16 @@ All authentication is handled through Supabase, providing secure and scalable us
 - Base template repo: [Github](https://github.com/TailAdmin/free-react-tailwind-admin-dashboard)
 - UI Framework: [Tailwind CSS](https://tailwindcss.com/)
 - Authentication: [Supabase](https://supabase.com/)
+
+## Made by:
+
+| Git name    | Discord Name |
+| ----------- | ------------ |
+| Amedeo      | n4pZ         |
+| kwui3       | Kay          |
+| cosmonewt   | Theo         |
+| liquidsonic |              |
+| JesNetWD    | Jes          |
+| bobby2910   | vB           |
+| Simon Aust  | Simon        |
+| Amine       | Amine        |
