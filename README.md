@@ -1,57 +1,29 @@
-# TailAdmin React - Free React Tailwind Admin Dashboard Template
+# Daily Drip
 
-TailAdmin is a free and open-source admin dashboard template built on **React and Tailwind CSS**, providing developers
-with everything they need to create a comprehensive, data-driven back-end,
-dashboard, or admin panel solution for upcoming web projects.
+A modern journaling app built with React, Tailwind CSS, and Supabase authentication.
 
-With TailAdmin, you get access to all the necessary dashboard UI components, elements, and pages required to build a
-feature-rich and complete dashboard or admin panel. Whether you're building dashboard or admin panel for a complex web
-application or a simple website, TailAdmin is the perfect solution to help you get up and running quickly.
-
-![TailAdmin React.js Dashboard Preview](./banner.png)
+![Daily Drip](./banner.png)
 
 ## Overview
 
-TailAdmin provides essential UI components and layouts for building feature-rich, data-driven admin dashboards and
-control panels. It's built on:
-
-- React 19
-- TypeScript
-- Tailwind CSS
-
-### Quick Links
-
-- [✨ Visit Website](https://tailadmin.com)
-- [📄 Documentation](https://tailadmin.com/docs)
-- [⬇️ Download](https://tailadmin.com/download)
-- [🖌️ Figma Design File (Community Edition)](https://www.figma.com/community/file/1214477970819985778)
-- [⚡ Get PRO Version](https://tailadmin.com/pricing)
-
-### Demos
-
-- [Free Version](https://free-react-demo.tailadmin.com/)
-- [Pro Version](https://react-demo.tailadmin.com)
-
-### Other Versions
-
-- [HTML Version](https://github.com/TailAdmin/tailadmin-free-tailwind-dashboard-template)
-- [Next.js Version](https://github.com/TailAdmin/free-nextjs-admin-dashboard)
-- [Vue.js Version](https://github.com/TailAdmin/vue-tailwind-admin-dashboard)
-
-## Installation
+This project is based on the TailAdmin free React Tailwind admin dashboard template. It has been enhanced with Supabase authentication to provide a complete authentication system for admin panels and dashboard applications.
 
 ### Prerequisites
 
-To get started with TailAdmin, ensure you have the following prerequisites installed and set up:
+Before you begin, ensure you have:
 
-- Node.js 18.x or later (recommended to use Node.js 20.x or later)
+- Node.js (version 16 or higher)
+- npm package manager
+- A Supabase account and project
+
+## Installation
 
 ### Cloning the Repository
 
 Clone the repository using the following command:
 
 ```bash
-git clone https://github.com/TailAdmin/free-react-tailwind-admin-dashboard.git
+git clone https://github.com/freeCodeCamp-2025-Summer-Hackathon/teal-cache.git
 ```
 
 > Windows Users: place the repository near the root of your drive if you face issues while cloning.
@@ -60,8 +32,6 @@ git clone https://github.com/TailAdmin/free-react-tailwind-admin-dashboard.git
 
    ```bash
    npm install
-   # or
-   yarn install
    ```
 
    > Use the `--legacy-peer-deps` flag, if you face issues while installing.
@@ -69,45 +39,47 @@ git clone https://github.com/TailAdmin/free-react-tailwind-admin-dashboard.git
 2. Start the development server:
    ```bash
    npm run dev
-   # or
-   yarn dev
    ```
 
-## Components
+### Supabase Configuration
 
-TailAdmin is a pre-designed starting point for building a web-based dashboard using React.js and Tailwind CSS. The
-template includes:
+1. Create a new project at Supabase.
+2. Get your project credentials:
 
-- Sophisticated and accessible sidebar
-- Data visualization components
-- Prebuilt profile management and 404 page
-- Tables and Charts(Line and Bar)
-- Authentication forms and input elements
-- Alerts, Dropdowns, Modals, Buttons and more
-- Can't forget Dark Mode 🕶️
+- Project URL: Go to Project Settings > General > - Project ID
+- Anon Key: Go to Project Settings > API > Project API keys
 
-All components are built with React and styled using Tailwind CSS for easy customization.
+3. Create a .env file in the root directory:
 
-## Feature Comparison
+```bash
+   VITE_SUPABASE_URL=https://your-project-id.supabase.co
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+```
 
-### Free Version
+### Run the development server
 
-- 1 Unique Dashboard
-- 30+ dashboard components
-- 50+ UI elements
-- Basic Figma design files
-- Community support
+```bash
+   npm run dev
+```
 
-### Pro Version
+## Project Structure
 
-- 5 Unique Dashboards: Analytics, Ecommerce, Marketing, CRM, Stocks (more coming soon)
-- 400+ dashboard components and UI elements
-- Complete Figma design file
-- Email support
+src/
+├── components/ # Reusable UI components
+├── pages/ # Page components
+├── hooks/ # Custom React hooks
+├── utils/ # Utility functions
+├── lib/ # Supabase client configuration
+└── styles/ # Global styles
 
-To learn more about pro version features and pricing, visit our [pricing page](https://tailadmin.com/pricing).
+## Authentication
 
-## Changelog
+The project includes a complete authentication system with:
+
+- User registration
+- User login
+- Protected routes
+- Session management
 
 ### Version 2.0.2 - [March 25, 2025]
 

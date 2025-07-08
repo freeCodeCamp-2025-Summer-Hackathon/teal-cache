@@ -41,7 +41,7 @@ export default function SignInForm() {
     } else {
       // Supabase handles session automatically, but if you need localStorage:
       // localStorage.setItem("authToken", data.session.access_token);
-      navigate("/");
+      navigate("/dashboard");
     }
 
     setIsLoading(false);
