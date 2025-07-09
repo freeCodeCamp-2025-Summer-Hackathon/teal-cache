@@ -1,14 +1,25 @@
 import { useState } from "react";
 import { DropdownItem } from "../ui/dropdown/DropdownItem";
 import { Dropdown } from "../ui/dropdown/Dropdown";
-import { Link } from "react-router";
 import { useUser } from "../../context/AuthContext";
+import { supabase } from "../../lib/supabaseClient";
 
 export default function UserDropdown() {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useUser();
 
-  console.log(user?.user_metadata);
+  const handleSignOut = async () => {
+    const { error } = await supabase.auth.signOut();
+    localStorage.setItem("authToken", "");
+
+    if (error) {
+      console.error("Sign out error:", error.message);
+    } else {
+      // Optional: redirect or clear local state
+      console.log("Signed out successfully");
+      window.location.href = "/signup"; // or use router
+    }
+  };
 
   function toggleDropdown() {
     setIsOpen(!isOpen);
@@ -25,8 +36,8 @@ export default function UserDropdown() {
       >
         <span className="mr-3 overflow-hidden rounded-full h-11 w-11 flex items-center">
           {/* <img src="/images/user/owner.jpg" alt="User" /> */}
-          <div className="h-10 w-10 bg-gradient-to-r from-gray-600 to-gray-800 flex items-center justify-center rounded-full font-semibold">
-            {user?.user_metadata.firstName[0] ?? "G"}{" "}
+          <div className="h-10 w-10 flex items-center justify-center rounded-full font-semibold border dark:border-gray-800 p-3">
+            {user?.user_metadata.firstName[0] ?? "G"}
             {user?.user_metadata.lastName[0]}
           </div>
         </span>
@@ -146,8 +157,8 @@ export default function UserDropdown() {
             </DropdownItem>
           </li>
         </ul>
-        <Link
-          to="/signin"
+        <button
+          onClick={handleSignOut}
           className="flex items-center gap-3 px-3 py-2 mt-3 font-medium text-gray-700 rounded-lg group text-theme-sm hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300"
         >
           <svg
@@ -166,7 +177,7 @@ export default function UserDropdown() {
             />
           </svg>
           Sign out
-        </Link>
+        </button>
       </Dropdown>
     </div>
   );

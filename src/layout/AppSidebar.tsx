@@ -108,7 +108,7 @@ const AppSidebar: React.FC = () => {
     let submenuMatched = false;
     ["main", "others"].forEach((menuType) => {
       const items = menuType === "main" && navItems;
-      Array.isArray(items) &&
+      if (Array.isArray(items)) {
         items.forEach((nav, index) => {
           if (nav.subItems) {
             nav.subItems.forEach((subItem) => {
@@ -122,6 +122,7 @@ const AppSidebar: React.FC = () => {
             });
           }
         });
+      }
     });
 
     if (!submenuMatched) {
@@ -300,7 +301,7 @@ const AppSidebar: React.FC = () => {
       >
         <Link to="/">
           {isExpanded || isHovered || isMobileOpen ? (
-            <>
+            <div>
               <img
                 className="dark:hidden"
                 src="/images/logo/logo-bg-white.jpeg"
@@ -315,7 +316,7 @@ const AppSidebar: React.FC = () => {
                 width={150}
                 height={40}
               />
-            </>
+            </div>
           ) : (
             <img
               src="/images/logo/logo-icon.svg"
@@ -325,9 +326,13 @@ const AppSidebar: React.FC = () => {
             />
           )}
         </Link>
-        <Button onClick={() => navigate("/new")}>
-          <PlusIcon />
-          Add New Entry
+        <Button size="sm" onClick={() => navigate("/new")}>
+          <span className={`menu-item-icon-size`}>
+            <PlusIcon />
+          </span>
+          {(isExpanded || isHovered || isMobileOpen) && (
+            <span className="menu-item-text">Add New Entry</span>
+          )}
         </Button>
       </div>
       <div className="flex flex-col overflow-y-auto duration-300 ease-linear no-scrollbar">
