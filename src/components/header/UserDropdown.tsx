@@ -3,21 +3,27 @@ import { DropdownItem } from "../ui/dropdown/DropdownItem";
 import { Dropdown } from "../ui/dropdown/Dropdown";
 import { useUser } from "../../context/AuthContext";
 import { supabase } from "../../lib/supabaseClient";
+import { useNavigate } from "react-router-dom";
 
 export default function UserDropdown() {
   const [isOpen, setIsOpen] = useState(false);
   const { user } = useUser();
+  const navigate = useNavigate();
 
   const handleSignOut = async () => {
-    const { error } = await supabase.auth.signOut();
-    localStorage.setItem("authToken", "");
+    try {
+      const { error } = await supabase.auth.signOut();
 
-    if (error) {
-      console.error("Sign out error:", error.message);
-    } else {
-      // Optional: redirect or clear local state
+      if (error) {
+        console.error("Sign out error:", error.message);
+        return;
+      }
+
+      localStorage.removeItem("authToken");
       console.log("Signed out successfully");
-      window.location.href = "/signup"; // or use router
+      navigate("/signin"); // Navigate using React Router
+    } catch (err) {
+      console.error("Unexpected sign out error:", err);
     }
   };
 
