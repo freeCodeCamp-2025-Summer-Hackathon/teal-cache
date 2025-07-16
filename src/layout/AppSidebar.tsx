@@ -299,7 +299,7 @@ const AppSidebar: React.FC = () => {
           !isExpanded && !isHovered ? "lg:justify-center" : "justify-start"
         }`}
       >
-        <Link to="/">
+        <Link to="/dashboard">
           {isExpanded || isHovered || isMobileOpen ? (
             <div>
               <img
@@ -318,12 +318,22 @@ const AppSidebar: React.FC = () => {
               />
             </div>
           ) : (
-            <img
-              src="/images/logo/logo-icon.svg"
-              alt="Logo"
-              width={32}
-              height={32}
-            />
+            <div>
+              <img
+                className="dark:hidden"
+                src="/images/logo/logo-icon-light.jpeg"
+                alt="Logo"
+                width={32}
+                height={32}
+              />
+              <img
+                className="hidden dark:block"
+                src="/images/logo/logo-icon-dark.jpeg"
+                alt="Logo"
+                width={32}
+                height={32}
+              />
+            </div>
           )}
         </Link>
         <Button size="sm" onClick={() => navigate("/new")}>
