@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import GridShape from "../../components/common/GridShape";
-import ThemeTogglerTwo from "../../components/common/ThemeTogglerTwo";
 import Button from "../../components/ui/button/Button"; // Use the same styled button component
 
 export default function Welcome() {
   const navigate = useNavigate();
 
   const handleGetStarted = () => {
-    navigate("/dashboard");
+    navigate("/signin");
   };
 
   return (
