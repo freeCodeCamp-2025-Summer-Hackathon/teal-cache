@@ -28,6 +28,7 @@ import AppLayout from "./layout/AppLayout";
 import { ScrollToTop } from "./components/common/ScrollToTop";
 import NewEntry from "./pages/NewEntry/NewEntry";
 import UserEntries from "./pages/Entries/UserEntries";
+import Support from "./pages/Support/Support";
 
 // Protected Route Component
 function ProtectedRoute({ children }: { children: ReactNode }) {
@@ -72,6 +73,9 @@ export default function App() {
 
           {/* New Entry */}
           <Route path="/new" element={<NewEntry />} />
+
+          {/* Support Page */}
+          <Route path="/support" element={<Support />} />
 
           {/* User Entry */}
           <Route path="/entries" element={<UserEntries />} />

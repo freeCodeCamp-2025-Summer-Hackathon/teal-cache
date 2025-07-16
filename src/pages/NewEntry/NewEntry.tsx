@@ -31,10 +31,10 @@ export default function NewEntry() {
 
   return (
     <div>
-      <h2 className="text-2xl font-semibold dark:text-white mb-12 ">
+      <h2 className="text-2xl font-semibold text-gray-800 dark:text-white/90 mb-12 ">
         New Entry
       </h2>
- 
+
       <div className="space-y-12 max-w-3xl mx-auto w-full">
         {" "}
         <TextArea
